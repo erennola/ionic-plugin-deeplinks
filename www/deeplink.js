@@ -50,7 +50,7 @@ var IonicDeeplink = {
       for (var targetPath in paths) {
         pathData = paths[targetPath];
 
-        var matchedParams = self.routeMatch(pathData, realPath);
+        var matchedParams = self.routeMatch(targetPath, realPath);
 
         if (matchedParams !== false) {
           matched = true;
@@ -202,9 +202,9 @@ var IonicDeeplink = {
   _getRealPath: function (data) {
 
     // 1. Let's just do the obvious and return the parsed 'path' first, if available.
-    if (!!data.path && data.path !== "") {
-      return data.path;
-    }
+    // if (!!data.path && data.path !== "") {
+    //   return data.path;
+    // }
 
     // 2. Now, are we using a non-standard scheme?
     var isCustomScheme = data.scheme.indexOf('http') === -1;
